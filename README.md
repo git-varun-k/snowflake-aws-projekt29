@@ -6,9 +6,8 @@ An end-to-end data engineering project that extracts playlist data from Spotify,
 
 ## 📐 Architecture
 
+![image alt](https://github.com/git-varun-k/snowflake-aws-projekt29/blob/effc5e53a0f60e3ebc61adc66d15b4e6a2e8e46d/architecture%20diagram.PNG)
 
-
-![Architecture](architecture_diagram.jpeg)
 
 ### Steps:
 - **Extract**: Spotify API called by AWS Lambda (triggered by CloudWatch) saves raw JSON to S3.
