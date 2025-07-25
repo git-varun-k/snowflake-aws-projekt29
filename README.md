@@ -1,32 +1,36 @@
-# Spotify Data Pipeline using AWS & Snowflake
+# 🎧 Spotify ETL Pipeline (Serverless with AWS & Snowflake)
 
-This project implements a serverless ETL pipeline to extract, transform, and load Spotify data using:
-- **AWS Lambda** (Python)
+An end-to-end data engineering project that extracts playlist data from Spotify, transforms it using AWS Lambda, stores it in S3, and auto-ingests it into Snowflake using Snowpipe.
+
+
+
+## 📐 Architecture
+
+
+
+![Architecture](architecture_diagram.jpeg)
+
+### Steps:
+- **Extract**: Spotify API called by AWS Lambda (triggered by CloudWatch) saves raw JSON to S3.
+- **Transform**: Another Lambda triggered on S3 event transforms data into song, artist, and album CSVs.
+- **Load**: Snowpipe auto-ingests transformed CSVs from S3 into Snowflake tables.
+
+
+
+## 🔧 Tech Stack
+
+- **Spotify API**
+- **Python (spotipy, boto3, pandas)**
+- **AWS Lambda**
 - **Amazon S3**
-- **Snowflake Snowpipe**
+- **Snowflake + Snowpipe**
 
-## Architecture
 
-![Architecture Diagram](architecture.png)
 
-## Components
+## 🚀 How to Use
 
-- **Extract**: Python Lambda fetches Spotify data and stores in S3
-- **Transform**: Another Lambda cleans/transforms data
-- **Load**: Snowpipe auto-ingests transformed data into Snowflake for analysis
+1. Clone this repo:
 
-## Setup Instructions
-
-1. Configure Spotify API credentials
-2. Set up AWS S3 buckets and Lambda IAM roles
-3. Deploy Lambda functions and CloudWatch triggers
-4. Create Snowflake table and Snowpipe
-
-## Folder Structure
-
-Explain folders briefly...
-
-## Security Notes
-
-- Never commit secrets or credentials
-- Use AWS Secrets Manager or environment variables
+```bash
+git clone https://github.com/git-varun-k/snowflake-aws-projekt29
+cd snowflake-aws-projekt29
